@@ -1,0 +1,90 @@
+{
+  "dashboard": {
+    "title": "概况",
+    "title1": "后台管理系统",
+    "tbBalance": "元宝",
+    "jbBalance": "金币",
+    "dbjBalance": "夺宝卷",
+    "packageDownload": "包下载",
+    "platformData": {
+      "title": "平台数据",
+      "register": "注册人数",
+      "login": "登录人数",
+      "arpu": "ARPU",
+      "recharge_p": "充值人数",
+      "recharge": "充值数(分)",
+      "arppu": "ARPPU"
+    },
+    "gameData": {
+      "title": "游戏数据"
+    },
+    "playerStat":{
+      "title": "用户统计",
+      "total": "累计总数",
+      "yesterday": "昨日新增",
+      "today": "今日新增",
+      "guest": "游客",
+      "mobile": "手机",
+      "other": "其它"
+    },
+    "rechargeStat":{
+      "title": "充值统计",
+      "total": "累计充值",
+      "yesterday": "昨日充值",
+      "today": "今日充值",
+      "totalSum": "总笔数",
+      "validSum": "有效笔数",
+      "invalidSum": "无效笔数"
+    }
+  },
+  "main": {
+    "title": "后台管理系统",
+    "tbBalance": "元宝",
+    "jbBalance": "金币",
+    "dbjBalance": "夺宝卷",
+    "promotenum":"推广号",
+    "packageDownload": "包下载",
+    "platformData": {
+      "title": "平台数据",
+      "register": "注册人数",
+      "login": "登录人数",
+      "arpu": "ARPU",
+      "recharge_p": "充值人数",
+      "recharge": "充值数(分)",
+      "arppu": "ARPPU"
+    },
+    "gameData": {
+      "title": "游戏数据"
+    },
+    "playerStat":{
+      "title": "用户统计",
+      "total": "累计登陆",
+      "playertotal":"用户总数",
+      "yesterday": "昨日新增注册",
+      "today": "今日新增注册",
+      "guest": "游客",
+      "mobile": "手机",
+      "other": "其它",
+      "logintoday":"今日登陆",
+      "loginyesterday":"昨日登陆"
+    },
+    "rechargeStat":{
+      "title": "充值统计",
+      "total": "累计充值",
+      "yesterday": "昨日充值",
+      "today": "今日充值",
+      "totalSum": "总笔数",
+      "validSum": "有效笔数",
+      "invalidSum": "无效笔数",
+      "week":"本周充值"
+    },
+    "gainStat":{
+      "title": "分成统计",
+      "total": "总营收（金币总输赢）",
+      "ratio": "归属己方的分成比例",
+      "divided": "已分成营收（已结算）",
+      "notDivided": "未分成营收（未结算）",
+      "proportional": "分成后将归属己方的营收"
+    }
+  }
+}

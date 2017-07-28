@@ -1,0 +1,156 @@
+<!-- hbox layout -->
+<div class="hbox hbox-auto-xs hbox-auto-sm bg-light ">
+
+    <!-- column -->
+    <div class="col w-xs  b-r">
+        <div class="wrapper-sm b-b">
+            <div class="pull-right">
+                <a href class="btn btn-sm btn-info m-t-n-xs"  ng-click="change(0)">
+                    {{'acl.role.add'|translate}}
+                </a>
+                <a href ng-if="!userRoles[curRole.code]&&curRole" class="btn btn-sm btn-success m-t-n-xs" ng-click="change(1)">
+                    {{'acl.role.modify'|translate}}
+                </a>
+                <a href ng-if="!isCollapsed" class="btn btn-sm btn-success m-t-n-xs" ng-click="change(2)">
+                    {{'acl.role.cancel'|translate}}
+                </a>
+            </div>
+
+            <div class="h4"><!--角色-->{{'acl.role.role'|translate}}</div>
+        </div>
+        <div ng-if="!isCollapsed" class="panel-body bg-white-only">
+            <form name="formValidate" class="form-horizontal form-validation">
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><!--上级角色-->{{'acl.role.lastrole'|translate}}</label>
+                    <div class="col-sm-9">
+                        <select multiple chosen class="w-full" data-placeholder-text-multiple="'上级角色'" ng-model="role.parents"  ng-options="option.code as option.title for option in roles">
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><!--编码-->{{'acl.role.coding'|translate}}</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="编码(a-z|A-Z|0-9字符)" ng-model="role.code" ng-pattern="/^[a-z|A-Z|0-9]*$/" ng-disabled="role._id" ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><!--名称-->{{'acl.role.name'|translate}}</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="{{'acl.role.name'|translate}}" ng-model="role.title"  ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><!--描述-->{{'acl.role.describe'|translate}}</label>
+                    <div class="col-sm-9">
+                        <input type="text" class="form-control" placeholder="{{'acl.role.describe'|translate}}" ng-model="role.description"  ng-required="true">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-3 control-label"><!--开/关-->{{'acl.role.switch'|translate}}</label>
+                    <div class="col-sm-9">
+                        <label class="i-checks checkbox-inline">
+                            <input type="checkbox" ng-model="role.status" ng-true-value="1" ng-false-value="0"><i></i>
+                        </label>
+                    </div>
+                </div>
+                <footer class="text-right">
+                    <button ng-hide="role._id" class="btn btn-info" ng-click="!formValidate.$invalid&&enter()"><!--确认-->{{'acl.role.submit'|translate}}</button>
+                    <button ng-show="role._id" class="btn btn-success" ng-click="!formValidate.$invalid&&update()"><!--保存-->{{'acl.role.save'|translate}}</button>
+                </footer>
+            </form>
+        </div>           <!-- 角色 -->
+        <div class="list-group no-radius no-border no-bg m-b-none" ui-jq="slimScroll" ui-refresh="app.navHeight" ui-options="{height:{{app.navHeight-150}}+'px', size:'8px'}">
+            <p ng-show="!roles.length&&isCollapsed" style="text-align: center">无数据</p>
+            <a ng-repeat="role in roles" class="list-group-item m-l-none hover-anchor b-a no-select" ng-class="{'focus': role.selected}" ng-click="selectRole(role)" >
+                <span ng-if="!userRoles[role.code]" ng-click="deleteRole(role)" class="pull-right text-muted hover-action"><i class="fa fa-times"></i></span>
+                <span class="block m-l" popover-placement="{{$index!=0&&$index==roles.length-1?'top':'bottom'}}" popover="{{role.code+':'+role.description}}" popover-trigger="mouseenter">{{ role.title}}</span>
+            </a>
+        </div>
+    </div>
+    <!-- /column -->
+
+
+    <!-- column -->
+    <script type="text/ng-template" id="angularTreeTemplate">          <!-- 资源内容 -->
+
+        <div class="tree-node tree-node-content background bottomborder" >
+            <a ng-if="item.children.length > 0" data-nodrag ng-click="toggle(this)">
+                <span class="glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed }"></span>
+            </a>
+                 <span popover-placement="{{'bottom'}}" popover="{{item.code}}"  popover-trigger="mouseenter" class="ititle">
+                 <!-- {{ item.title | limitTo: 10 }}{{item.title.length > 10 ? '...' : ''}} -->
+                     {{ item.title||item.code}}
+                 </span>
+
+                <label ng-style="checkPer(item,'get')?'':style" class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px;" >
+                    <input class="resetValue" type="checkbox" value="get" ng-checked="curPermission[item.code].indexOf('get')>-1" ng-click="setPermisssion($event,item.code)" ng-disabled="userRoles[curRole.code]" ><i></i>
+                </label>
+
+                <label ng-style="checkPer(item,'delete')?'':style" class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px;"  >
+                    <input  class="resetValue" type="checkbox" value="delete" ng-checked="curPermission[item.code].indexOf('delete')>-1" ng-click="setPermisssion($event,item.code)" ng-disabled="userRoles[curRole.code]" ><i></i>
+                </label>
+
+
+                <label ng-style="checkPer(item,'put')?'':style" class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px;" >
+                    <input class="resetValue" type="checkbox" value="put" ng-checked="curPermission[item.code].indexOf('put')>-1" ng-click="setPermisssion($event,item.code)" ng-disabled="userRoles[curRole.code]" ><i></i>
+                </label>
+
+
+                <label  ng-style="checkPer(item,'post')?'':style" class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px;">
+                    <input   class="resetValue" type="checkbox"  value="post"  ng-checked="curPermission[item.code].indexOf('post')>-1"   ng-click="setPermisssion($event,item.code)"   ng-disabled="userRoles[curRole.code]"><i></i>
+                </label>
+        </div>
+
+        <ul ng-model="item.children" ng-class="{hidden: collapsed}" style="margin:0px;list-style:none;">
+            <li ng-repeat="item in item.children  | filter:query" ui-tree-node ng-include="'angularTreeTemplate'">
+
+            </li>
+        </ul>
+    </script>
+    <div class="col w-lg lter b-r">
+        <!--loading-->
+        <div ng-if="moreloading">
+            <div style="position:fixed;z-index:1;width:100%;height:100%; background:#eeeeee;opacity: 0.5;"></div>
+
+            <div   style="position:fixed;z-index: 2;left: 65%;top: 50%;transform: translate(-50%, -50%)">
+                <div class="text-center"><img width="30px" src="./apps/common/img/loading.gif"></div>
+            </div>
+        </div>
+
+        <div class="wrapper-sm b-b" >
+                <label class="control-label h4"  translate="acl.role.rolename">角色名称</label>
+                <input style="display: inline-block;width: auto;margin-right:5%;height: 30px" type="text" class="form-control input-sm text-md" placeholder="角色名称" ng-model="curRole.title"  disabled>
+                <label class="control-label h4"  translate="acl.role.describe">描述</label>
+                <input  style="display: inline-block;width: 25%;height: 30px;" type="text" class="form-control input-sm text-md" placeholder="描述" ng-model="curRole.description" disabled>
+                <div class="input-sm bg-light rounded padder " style="display: inline-block;margin: 0 3%">
+                    <i class="fa fa-search"></i> <input type="text" ng-model="query" class="bg-light w-md no-border" placeholder="权限">
+                </div>
+                <button style="display: inline-block;height: 30px" class="btn btn-info btn-sm" ng-click="changePermission()" ng-if="!userRoles[curRole.code]" translate="acl.role.save">保存</button>
+        </div>
+        <div class="wrapper-sm b-b">
+            <span translate="acl.role.resourse">资源</span>
+
+            <label class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 120px" translate="acl.role.search">查询</label>
+
+            <label class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px" translate="acl.role.delete">删除</label>
+
+            <label class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px" translate="acl.role.add">增加</label>
+
+            <label class="i-checks checkbox-inline pull-right" style="display: inline-block;width: 100px" translate="acl.role.modify">修改</label>
+
+        </div>
+        <div  ng-show="curRole._id" class="list-group no-radius no-border no-bg m-b-none" ui-jq="slimScroll" ui-refresh="app.navHeight" ui-options="{height:{{app.navHeight-145}}+'px', size:'8px'}">
+            <div ui-tree="treeOptions" id="tree-root">
+                <ul ui-tree-nodes ng-model="angularTreeList" style="margin:0px;list-style:none;">
+                    <li ng-repeat="item in angularTreeList | filter:query" ui-tree-node ng-include="'angularTreeTemplate'">
+                    </li>
+                </ul>
+                <div class="line"></div>
+                <div class="line"></div>
+            </div>
+        </div>
+    </div>
+    <!-- /column -->
+
+
+</div>

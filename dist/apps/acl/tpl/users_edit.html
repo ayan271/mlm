@@ -1,0 +1,101 @@
+<div>
+    <div ui-view class="fade-in-down"></div>
+    <form ng-show="$state.is('app.acl.users.edit') " name="formValidate" class="form-horizontal form-validation">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <strong translate="acl.user.editinformation">编辑信息</strong>
+            </div>
+            <div class="panel-body">
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="acl.user.user">用户</label>
+                    <div class="col-sm-3" ng-if="!roleDisable">
+                        <div class="input-group">
+                            <input type="text" class="form-control input-sm" placeholder="用户" ng-model="user._id" ng-disabled="id" disabled/>
+                            <div  class="input-group-btn dropdown " drop-down-table >
+                                 <div type="button" class="btn btn-sm btn-default" translate="acl.user.search" ng-click="searchUser(user._id)">搜索 <span class="caret"></span></div>
+                                    <ul class="dropdown-menu pull-right" >
+                                        <div class="input-group">
+                                            <input type="text" class="form-control input-sm btn-rounded" placeholder="搜索用户名" ng-model="keyword">
+                                            <span class="input-group-btn">
+                                              <button class="btn btn-default btn-sm btn-rounded" ng-click="searchUser(keyword)"><i class="fa fa-search"></i></button>
+                                            </span>
+                                        </div>
+                                        <table st-table="rowCollectionBasic" class="w-xl table table-bordered table-striped" style="margin: 0 0 5px 0">
+                                            <thead>
+                                            <tr>
+                                                <th>{{ 'common.userId' | translate }}</th>
+                                                <th>{{ 'common.userAccount' | translate }}</th>
+                                                <th>{{ 'common.userName' | translate }}</th>
+                                            </tr>
+                                            </thead>
+                                            <tbody>
+                                            <tr ng-repeat="row in usersInfo.rows.slice(10*(i-1),[10*i])" ng-click="selectUser($event)" st-select-mode="single">
+                                                <td>{{row.uid}}</td>
+                                                <td>{{row.account||row.mobile}}</td>
+                                                <td>{{row.nick}}</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <div ng-if="usersInfo.rows.length > 4" style="text-align: center;">
+                                            <i class="glyphicon glyphicon-chevron-left color" style="width: 20%" ng-click="left()"></i>
+                                            <span>
+                                                <label>{{i}}</label>/
+                                                <label>{{psize}}</label>
+                                            </span>
+                                            <i class="glyphicon glyphicon-chevron-right color" style="width: 20%" ng-click="right()"></i>
+                                        </div>
+                                    </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-3" ng-if="roleDisable">
+                        <input type="text" class="form-control input-sm" ng-model="user._id" disabled/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" style="padding-top: 13px" translate="acl.user.label">标签</label>
+
+                    <div class="col-sm-3"ng-if="!roleDisable">
+                        <tags-input class="bootstrap" ng-model="user.tags" add-on-space="true" add-on-paste="true" placeholder="添加标签" min-length="1"></tags-input>
+                    </div>
+                    <div class="col-sm-3" ng-if="roleDisable">
+                        <input type="text" class="form-control input-sm" ng-model="user.tags" disabled/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="acl.user.nick">昵称</label>
+                    <div class="col-sm-3">
+                        <input type="text" class="form-control" placeholder="昵称" ng-model="user.nick" >
+                    </div>
+                    <div class="col-sm-1"></div>
+                </div>
+                <div class="form-group" >
+                    <label class="col-sm-2 control-label" translate="acl.user.role">角色</label>
+                    <div class="col-sm-3" ng-if="!roleDisable">
+                        <select chosen multiple class="w-full" data-placeholder-text-multiple="'选择角色'" ng-model="user.roles" ng-options=" option.code as option.title for option in allRoles"  >
+                        </select>
+                    </div>
+                    <div class="col-sm-3" ng-if="roleDisable">
+                        <input  type="text" class="form-control input-sm" ng-model="user.rolesformat"   disabled/>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="col-sm-2 control-label" translate="acl.user.active ">激活状态</label>
+                    <div class="col-sm-3">
+                        <label class="i-checks checkbox-inline">
+                            <input type="checkbox" ng-model="user.status" ng-true-value="1" ng-false-value="0"><i></i>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <!-- 加载编辑器的容器 -->
+            <footer class="panel-footer text-right bg-light lter">
+                <div style="max-width: 700px">
+                    <button ng-if="!id"type="submit" class="btn btn-success text-right" ng-click="!formValidate.$invalid&&save()" translate="acl.user.save">保存</button>
+                    <button ng-if="id" type="submit" class="btn btn-success text-right" ng-click="!formValidate.$invalid&&update()" translate="acl.user.modify">修改</button>
+                </div>
+            </footer>
+        </div>
+    </form>
+
+</div>

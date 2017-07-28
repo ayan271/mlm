@@ -1,0 +1,56 @@
+{
+	"acl": {
+		"role": {
+			"add": "Add ",
+			"modify": "Modify",
+			"role": "Role",
+			"lastrole": "Superior Role",
+			"coding": "Coding",
+			"name": "Name",
+			"describe": "Describe",
+			"resourse": "Resourse",
+			"search": "Search",
+			"delete": "Delete",
+			"switch": "Switch",
+			"submit": "Submit",
+			"rolename": "Rolename",
+			"save": "Save",
+			"cancel": "Cancel"
+		},
+		"user": {
+			"create": "Create",
+			"delete": "Delete",
+			"state": "State",
+			"suspend": "Suspend",
+			"normal": "Normal",
+			"userlist": "User List",
+			"editinformation": "Edit Information",
+			"user": "User",
+			"search": "Search",
+			"userobjectID": "User ObjectID",
+			"userID": "User ID",
+			"username": "User Name",
+			"label": "Label",
+			"nick": "Nick",
+			"role": "Role",
+			"active": "Active",
+			"save": "Save",
+			"modify": "Modify"
+		},
+		"resource": {
+			"add": "Add",
+			"resource": "Resource",
+			"editresource": "Edit Resource",
+			"superiorresources": "Superior Resources",
+			"coding": "Coding",
+			"name": "Name",
+			"describe": "Describe",
+			"order": "Order",
+			"authority": "Authority",
+			"visibility": "Visibility",
+			"update": "Update",
+			"delete": "Delete",
+			"create": "Create"
+		}
+	}
+}

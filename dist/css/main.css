@@ -1,0 +1,136 @@
+.fileUpload {
+    position: relative;
+    overflow: hidden;
+}
+.fileUpload input.upload {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    cursor: pointer;
+    opacity: 0;
+    filter: alpha(opacity=0);
+}
+.titlefixed{
+    width:100%;
+    position: fixed;
+    z-index: 3;
+    top:50px;
+}
+.paddingtop{
+    padding-top: 50px;
+}
+.background:hover{
+    background: #EDF1F2;
+}
+.bottomborder{
+    border-bottom: 1px solid #E4EAEC;
+    padding-bottom: 2px;
+}
+.color:hover{
+    color:#1993B9;
+}
+.headpadd{
+    padding: 5px 0 3px 0;
+}
+.buttonpadd{
+    padding-right: 1em;
+}
+.p-b-sm{
+    padding-bottom: 5px
+}
+.p-b-md{
+    padding-bottom: 10px
+}
+.p-b-lg{
+    padding-bottom: 15px
+}
+.p-r-sm{
+    padding-right:5px;
+}
+.p-r-md{
+    padding-right:10px;
+}
+.p-r-lg{
+    padding-right:20px;
+}
+.p-l-sm{
+    padding-left:5px;
+}
+.p-l-md{
+    padding-left:10px;
+}
+.p-l-lg{
+    padding-left:20px;
+}
+.hcolor{
+    color: #009100;
+}
+
+/*用于新表格移动端适应*/
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px)  {
+
+    /* Force table to not be like tables anymore */
+    .mobiletable, .mobiletable thead, .mobiletable tbody,.mobiletable tfoot, .mobiletable th, .mobiletable td, .mobiletable tr{
+        display: block;
+    }
+
+    /* Hide table headers (but not display: none;, for accessibility) */
+    .mobiletable thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+
+    .mobiletable tbody tr, .mobiletable thead tr, .mobiletable tfoot tr {
+        border: 1px solid #ccc;
+        margin-bottom:3px;
+    }
+    .mobiletable td{
+        height: 2.7em;
+    }
+    .mobiletable td:before {
+        width: 50%;
+        white-space: nowrap;
+        float: left;
+    }
+    .mobiletable td:before { content: attr(data-title); }
+
+}
+/*固定表头*/
+.cttable {
+    border: 1px #ccc solid;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+}
+.form-table {
+    width: 100%;
+    margin: 0 auto;
+    table-layout: fixed;
+}
+.form-table th{
+    background: #ffffff;
+}
+.fixed-thead tr th {
+    border-right: 1px #ddd solid;
+    text-align: center;
+    height: 25px;
+}
+.fixed-tfoot tr td {
+    border-right: 1px #ddd solid;
+    padding-left: 1em
+}
+.scroll-box {
+    width: 100%;
+    overflow: auto;
+    overflow-x: hidden;
+    border-top: 1px #ccc solid;
+    border-bottom: 1px #ccc solid;
+    word-break: break-all;
+}
+
+

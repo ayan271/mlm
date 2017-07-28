@@ -1,0 +1,56 @@
+{
+	"acl": {
+		"role": {
+			"add": "tăng mới",
+			"modify": "sửa đổi",
+			"role": "nhân vật",
+			"lastrole": "nhân vật cấp cao",
+			"coding": "code",
+			"name": "tên",
+			"describe": "miêu tả",
+			"resourse": "tài nguyên",
+			"search": "tìm kiếm",
+			"delete": "xóa",
+			"switch": "mở/đóng",
+			"submit": "xác nhận",
+			"rolename": "tên gọi nhân vật",
+			"save": "lưu",
+			"cancel": "hủy"
+		},
+		"user": {
+			"create": "kiến tạo",
+			"delete": "xóa",
+			"state": "trạng thái",
+			"suspend": "đóng băng",
+			"normal": "hồi phục bình thường",
+			"userlist": "danh sách người dùng",
+			"editinformation": "biên tập danh sách",
+			"user": "người dùng",
+			"search": "tìm kiếm",
+			"userobjectID": "objectID người dùng",
+			"userID": "ID người dùng",
+			"username": "tên người dùng",
+			"label": "tag",
+			"nick": "nick",
+			"role": "nhân vật",
+			"active": "trạng thái kích hoạt",
+			"save": "lưu",
+			"modify": "thay đổi"
+		},
+		"resource": {
+			"add": "thêm mới",
+			"resource": "tài nguyên",
+			"editresource": "biên tập tài nguyên",
+			"superiorresources": "tài nguyên cấp cao",
+			"coding": "code",
+			"name": "tên",
+			"describe": "tên",
+			"order": "trình tự",
+			"authority": "quyền hạn",
+			"visibility": "có cần hiển thị",
+			"update": "update",
+			"delete": "xóa",
+			"create": "kiến tạo"
+		}
+	}
+}

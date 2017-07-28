@@ -1,0 +1,56 @@
+{
+	"acl": {
+		"role": {
+			"add": "新增",
+			"modify": "修改",
+			"role": "角色",
+			"lastrole": "上级角色",
+			"coding": "编码",
+			"name": "名称",
+			"describe": "描述",
+			"resourse": "资源",
+			"search": "查询",
+			"delete": "删除",
+			"switch": "开/关",
+			"submit": "确认",
+			"rolename": "角色名称",
+			"save": "保存",
+			"cancel": "取消"
+		},
+		"user": {
+			"create": "创建",
+			"delete": "删除",
+			"state": "状态",
+			"suspend": "封停",
+			"normal": "正常",
+			"userlist": "用户列表",
+			"editinformation": "编辑信息",
+			"user": "用户",
+			"search": "搜索",
+			"userobjectID": "用户objectID",
+			"userID": "用户ID",
+			"username": "用户名",
+			"label": "标签",
+			"nick": "昵称",
+			"role": "角色",
+			"active": "激活状态",
+			"save": "保存",
+			"modify": "修改"
+		},
+		"resource": {
+			"add": "新增",
+			"resource": "资源",
+			"editresource": "编辑资源",
+			"superiorresources": "上级资源",
+			"coding": "编码",
+			"name": "名称",
+			"describe": "名称",
+			"order": "顺序",
+			"authority": "权限",
+			"visibility": "是否显示",
+			"update": "更新",
+			"delete": "删除",
+			"create": "创建"
+		}
+	}
+}

@@ -1,0 +1,112 @@
+<div>
+  <div class="bg-light lter b-b wrapper-md">
+    <div class="row">
+      <!--<div class="pull-right">-->
+        <!--<div class="inline m-r text-left" style="text-align: center">-->
+          <!--<div class="m-b-xs" translate="main.jbBalance">金币</div>-->
+          <!--<div>{{jb}}</div>-->
+        <!--</div>-->
+      <!--</div>-->
+
+      <h1 class="m-n font-thin h3 p-l-lg">{{'main.title'| translate}}</h1>
+    </div>
+  </div>
+  <!--ui-jq="slimScroll" ui-refresh="app.navHeight" ui-options="{height:{{app.navHeight-140}}+'px', size:'8px'}"-->
+  <div class="wrapper-md" >
+    <div class="row">
+      <div ng-if="level==2" class="col-lg-3">
+        <div class="panel panel-default">
+          <div class="panel-body">
+            <div class="clearfix text-center m-t">
+              <div class="inline">
+                <img alt="" src="{{promote}}" style="width: 62%;">
+                <div class="h4 m-t m-b-xs"><a style="color:#0000CC" href="{{url}}" target="_blank">{{url}}</a></div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <div class="panel panel-default">
+          <div class="text-center wrapper m-b-sm bg-primary">
+            {{ 'main.playerStat.title' | translate }}
+          </div>
+          <ul class="list-group no-radius">
+            <li class="list-group-item">
+              <span class="pull-right">{{stat.user_total||0}}</span>
+              {{ 'main.playerStat.playertotal' | translate }}
+            </li>
+            <li class="list-group-item">
+              <span class="pull-right">{{stat.login_today||0}}</span>
+              {{ 'main.playerStat.logintoday' | translate }}
+            </li>
+            <li class="list-group-item">
+              <span class="pull-right">{{stat.user_today||0}}</span>
+              {{ 'main.playerStat.today' | translate }}
+            </li>
+            <li class="list-group-item">
+              <span class="pull-right">{{stat.login_yesterday||0}}</span>
+              {{ 'main.playerStat.loginyesterday' | translate }}
+            </li>
+            <li class="list-group-item">
+              <span class="pull-right">{{stat.user_yesterday||0}}</span>
+              {{ 'main.playerStat.yesterday' | translate }}
+            </li>
+            <!--<li class="list-group-item">-->
+            <!--<span class="pull-right">{{stat.user_guest||0}}</span>-->
+            <!--{{ 'main.playerStat.guest' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{stat.user_mobile||0}}</span>-->
+              <!--{{ 'main.playerStat.mobile' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{(stat.user_wechat+stat.user_qq)||0}}</span>-->
+              <!--{{ 'main.playerStat.other' | translate }}-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!--<div class="panel panel-default">-->
+          <!--<div class="text-center wrapper m-b-sm bg-info">-->
+            <!--{{ 'main.gainStat.title' | translate }}-->
+          <!--</div>-->
+          <!--<ul class="list-group no-radius">-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{divided.gain_jb}}</span>-->
+              <!--{{ 'main.gainStat.total' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{divided.settled||0}}</span>-->
+              <!--{{ 'main.gainStat.divided' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{divided.notDivided}}</span>-->
+              <!--{{ 'main.gainStat.notDivided' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{agent.ratio||0}}</span>-->
+              <!--{{ 'main.gainStat.ratio' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+              <!--<span class="pull-right">{{divided.amount}}</span>-->
+              <!--{{ 'main.gainStat.proportional' | translate }}-->
+            <!--</li>-->
+            <!--<li class="list-group-item">-->
+            <!--<span class="pull-right">{{stat.recharge_order_invalid||0}}</span>-->
+            <!--{{ 'main.rechargeStat.invalidSum' | translate }}-->
+            <!--</li>-->
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+</div>
+
+
+

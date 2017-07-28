@@ -1,0 +1,98 @@
+{
+  "dashboard": {
+    "title": "概况",
+    "title1": "thông tin tài khoản cá nhân",
+    "tbBalance": "số dư nguyên bảo",
+    "jbBalance": "số dư hoàng kim",
+    "dbjBalance": "số dư phiếu đoạt bảo",
+    "packageDownload": "gói tải về",
+    "platformData": {
+      "title": "số liệu sever",
+      "register": "số người đăng ký",
+      "login": "số người đăng nhập",
+      "arpu": "ARPU",
+      "recharge_p": "số người nạp tiền",
+      "recharge": "số (điểm) nạp",
+      "arppu": "ARPPU"
+    },
+    "gameData": {
+      "title": "số liệu trò chơi"
+    },
+    "playerStat":{
+      "title": "thông kê người dùng",
+      "total": "tổng số",
+      "yesterday": "tăng thêm vào hôm qua",
+      "today": "tăng thêm vào hôm nay",
+      "guest": "khách chơi",
+      "mobile": "điện thoại",
+      "other": "khác"
+    },
+    "rechargeStat":{
+      "title": "thống kê nạp tiền",
+      "total": "tổng cộng nạp tiền",
+      "yesterday": "nạp tiền hôm qua",
+      "today": "nạp tiền hôm nay",
+      "totalSum": "Tổng số tiền",
+      "validSum": "Hiệu quả số tiền",
+      "invalidSum": "Số tiền không hợp lệ"
+    },
+    "gainStat":{
+      "title": "Chia stat",
+      "total": "Tổng doanh thu",
+      "ratio": "Tỷ lệ chia",
+      "divided": "Đã chia thành số",
+      "notDivided": "Có thể chia thành số",
+      "proportional": "Chia theo tỷ lệ số"
+    }
+  },
+  "main": {
+    "title": "thông tin tài khoản cá nhân",
+    "tbBalance": "số dư nguyên bảo",
+    "jbBalance": "số dư hoàng kim",
+    "dbjBalance": "số dư phiếu đoạt bảo",
+    "promotenum":"推广号",
+    "packageDownload": "gói tải về",
+    "platformData": {
+      "title": "số liệu sever",
+      "register": "số người đăng ký",
+      "login": "số người đăng nhập",
+      "arpu": "ARPU",
+      "recharge_p": "số người nạp tiền",
+      "recharge": "số (điểm) nạp",
+      "arppu": "ARPPU"
+    },
+    "gameData": {
+      "title": "số liệu trò chơi"
+    },
+    "playerStat":{
+      "title": "thông kê người dùng",
+      "total": "tổng số",
+      "playertotal":"玩家总数",
+      "yesterday": "tăng thêm vào hôm qua",
+      "today": "tăng thêm vào hôm nay",
+      "guest": "khách chơi",
+      "mobile": "điện thoại",
+      "other": "khác",
+      "logintoday":"Ngày nay, hạ cánh",
+      "loginyesterday":"Hôm qua đã đổ bộ"
+    },
+    "rechargeStat":{
+      "title": "thống kê nạp tiền",
+      "total": "tổng cộng nạp tiền",
+      "yesterday": "nạp tiền hôm qua",
+      "today": "nạp tiền hôm nay",
+      "totalSum": "Tổng số tiền",
+      "validSum": "Hiệu quả số tiền",
+      "invalidSum": "Số tiền không hợp lệ",
+      "week":"Tuần này tăng lên"
+    },
+    "gainStat":{
+      "title": "Chia stat",
+      "total": "总营收（金币总输赢）",
+      "ratio": "归属己方的分成比例",
+      "divided": "已分成营收（已结算）",
+      "notDivided": "未分成营收（未结算）",
+      "proportional": "分成后将归属己方的营收"
+    }
+  }
+}

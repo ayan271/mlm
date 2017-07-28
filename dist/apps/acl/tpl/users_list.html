@@ -1,0 +1,39 @@
+<div class="bg-light lter b-b wrapper"><h1 class="m-n font-thin h3" translate="acl.user.userlist">用户列表</h1></div>
+<div>
+    <div class="pull-right m-r-xxl headpadd">
+        <button ui-sref="app.acl.users.edit" type="button" class="btn btn-sm btn-primary btn-addon">
+            <i class="fa fa-plus"></i><!--创建-->{{'acl.user.create'|translate}}
+        </button>
+        <button type="button" class="btn btn-sm btn-danger btn-addon" ng-click="delete()">
+            <i class="fa fa-trash-o"></i><!--删除-->{{'acl.user.delete'|translate}}
+        </button>
+    </div>
+    <div class="pull-right headpadd">
+        <form>
+            <div class="input-group m-r-sm">
+                <input type="text" ng-model="search.keyword" class="form-control input-sm bg-light no-border rounded padder" placeholder="搜索 账号/昵称">
+                <span class="input-group-btn" style="width: auto">
+                    <button type="submit" class="btn btn-sm bg-light rounded" ng-click="onPageSizeChanged()"><i class="fa fa-search"></i></button>
+                  </span>
+            </div>
+        </form>
+    </div>
+    <div class="pull-right m-r-sm headpadd" >
+        <select class="input-sm form-control" ng-model="search.status" ng-change="onPageSizeChanged()">
+            <option value=""><!--状态-->{{'acl.user.state'|translate}}</option>
+            <option value="0"><!--封停-->{{'acl.user.suspend'|translate}}</option>
+            <option value="1"><!--正常-->{{'acl.user.normal'|translate}}</option>
+        </select>
+    </div>
+    <div class="pull-right m-r-sm headpadd">
+        <select class="input-sm form-control" ng-model="pageSize" ng-options="o.val as o.val for o in listRowsOptions" ng-change="onPageSizeChanged()">
+        </select>
+    </div>
+</div>
+
+<div class="panel panel-default">
+    <div class="line b-b" style="margin: 0"></div>
+    <div class="panel-body">
+        <div ng-style="{height:app.navHeight-165+'px'}" ag-grid="gridOptions" class="ag-fresh" ></div>
+    </div>
+</div>
