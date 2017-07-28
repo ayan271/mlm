@@ -1,0 +1,44 @@
+<!--<div class="row">-->
+<!--<div class="col-sm-8">-->
+<!--<input type="file" img-cropper-fileread image="cropper.sourceImage"/>-->
+
+<!--<div>-->
+<!--<canvas width="500" height="300" id="canvas" image-cropper image="cropper.sourceImage"-->
+<!--cropped-image="cropper.croppedImage" crop-width="cropper.cropWidth || 480" crop-height="cropper.cropHeight || 300" keep-aspect="true"-->
+<!--touch-radius="30" crop-area-bounds="bounds"></canvas>-->
+<!--</div>-->
+<!--</div>-->
+<!--<div ng-show="cropper.croppedImage!=null" class="col-sm-4">-->
+<!--<div>预览</div>-->
+<!--<div><img width="200" ng-src="{{cropper.croppedImage}}"/></div>-->
+<!--<button class="btn btn-sm btn-success text-uc m-t-n-xs" ng-click="ok()"><strong>ok</strong></button>-->
+<!--<button class="btn btn-sm text-uc m-t-n-xs" ng-click="cancel()"><strong>cancel</strong></button>-->
+<!--</div>-->
+<!--</div>-->
+<div class="bg-light lter b-b wrapper">
+    <h1 class="m-n font-thin h3">{{'imgcrop.title'|translate}}</h1>
+</div>
+<div class="wrapper-md">
+    <div class="fileUpload btn m-b-xs btn-sm btn-primary btn-addon"><i class="fa fa-folder"></i>
+        <span>{{'imgcrop.label'|translate}}...</span>
+        <input type="file" class="upload" ui-filereader ng-model="cropper.sourceImage" accept="image/*"/>
+    </div>
+    <div class="hbox hbox-auto-xs">
+        <div class="col">
+            <div>
+                <canvas width="500" height="300" id="canvas" image-cropper image="cropper.sourceImage"
+                        cropped-image="cropper.croppedImage" crop-width="cropper.cropWidth || 480" crop-height="cropper.cropHeight || 300" keep-aspect="true"
+                        touch-radius="30" crop-area-bounds="bounds"></canvas>
+            </div>
+        </div>
+        <div ng-show="cropper.croppedImage!=null" class="col">
+            <div class="bg-light">
+                <img width="200" ng-src="{{cropper.croppedImage}}" />
+            </div>
+        </div>
+    </div>
+    <div class="m-t-xs">
+        <label class="btn btn-success" ng-click="ok()"><strong>{{'imgcrop.ok'|translate}}</strong></label>
+        <label class="btn btn-default" ng-click="cancel()"><strong>{{'imgcrop.cancel'|translate}}</strong></label>
+    </div>
+</div>

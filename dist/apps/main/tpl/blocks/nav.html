@@ -1,0 +1,50 @@
+<!-- list -->
+<ul class="nav">
+  <li class="hidden-folded padder m-t m-b-sm text-muted text-xs">
+    <span translate="nav.HEADER">导航菜单</span>
+  </li>
+  <li ui-sref-active="active">
+    <a ui-sref="app.dashboard">
+      <i class="glyphicon glyphicon-stats icon text-primary-dker"></i>
+      <span class="font-bold" translate="nav.MAIN">首页</span>
+    </a>
+  </li>
+  <li ng-repeat="item in nav" ng-class="{active:$state.includes(item.active)}">
+    <a ng-if="item.children.length" href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+      <i class="icon {{item.icon}} text-info-dker"></i>
+      <span class="font-bold" translate>{{item.code}}</span>
+    </a>
+
+    <ul ng-if="item.children.length" class="nav nav-sub dk" ng-include="'navs'"  ng-init="nav=item.children"></ul>
+
+    <a ng-if="!item.children.length" ui-sref="{{item.uisref}}">
+      <i class="icon {{item.icon}} text-info-dker"></i>
+      <span class="font-bold" translate>{{item.code}}</span>
+    </a>
+  </li>
+</ul>
+<!-- / list -->
+<script id="navs" type="text/ng-template">
+  <li ng-repeat="item in nav" ng-class="item.active&&{active:$state.includes(item.active)}" ui-sref-active="{{!item.active&&'active'}}">
+    <a ng-if="item.children.length" href class="auto">
+            <span class="pull-right text-muted">
+                <i class="fa fa-fw fa-angle-right text"></i>
+                <i class="fa fa-fw fa-angle-down text-active"></i>
+            </span>
+      <i class="icon {{item.icon}} text-info-dker"></i>
+      <span class="font-bold" translate>{{item.code}}</span>
+    </a>
+
+    <ul ng-if="item.children.length" class="nav nav-sub dk" ng-include="'navs'" ng-init="nav=item.children"></ul>
+
+    <a ng-if="!item.children.length" ui-sref="{{item.uisref}}" style="padding-left: 55px">
+      <i class="icon {{item.icon}} text-info-dker"></i>
+      <span class="font-bold" translate>{{item.code}}</span>
+    </a>
+  </li>
+</script>
+

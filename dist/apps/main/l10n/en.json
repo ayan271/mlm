@@ -1,0 +1,208 @@
+{
+  "COPYRIGHT": "Limited company<br>&copy; 2017",
+  "HEADNAME": "MLM",
+  "login": {
+    "LOGIN": "Log in",
+    "FORGOT_PASSWORD": "Forgot password?",
+    "ENTER_LOGIN_INFO": "Please enter the login information",
+    "ACCOUNT": "Account",
+    "PASSWORD": "Password",
+    "VERIFICATION": "Verification code"
+  },
+  "footer":{
+    "homepage":"Home",
+    "increase":"Increase",
+    "decrease":"Decrease",
+    "player":"Player",
+    "transfer":"transfer"
+  },
+  "nav": {
+    "HEADER": "Navigation",
+    "MAIN": "Home"
+  },
+  "app": {
+    "per": {
+      "manage":"Permission",
+      "org": "Organization",
+      "users": "User",
+      "role": "Role",
+      "resource": "Resource",
+      "roleUser": "Role User"
+    },
+    "acl": {
+      "manage":"Permission",
+      "user": "User",
+      "role": "Role",
+      "resource": "Resource"
+    },
+    "config":{
+      "manage": "Config Manage",
+      "list": "Config List",
+      "menus": "Set Menu",
+      "systeminit": "System Init",
+      "systemconfig": "System Config",
+      "unified": "Unified Config"
+    },
+    "recharge":{
+      "manage": "Recharge",
+      "cardtype": "Card Type",
+      "card": "Card",
+      "third": "Third",
+      "cardlog": "Log"
+    },
+    "player":{
+      "manage": "Player Manage",
+      "info": "Info",
+      "online": "Online",
+      "record": "Record",
+      "givelog": "Give Log"
+    },
+    "uppoints":{
+      "manage":"上分"
+    },
+    "backpoints":{
+      "manage":"Back Points",
+      "list":"Back points operation",
+      "log":"Back points log"
+    },
+    "datastatistics":{
+      "manage":"Data Statistics",
+      "playerdata":"Player Data",
+      "agentdata":"Agent Data",
+      "logreg":"登录注册日报表",
+      "profit":"盈利日报表",
+      "playerstatistics":"Player Statistics",
+      "agentstatistics":"Agent Statistics",
+      "table":"Table Statistics",
+      "playerdiary":"Transaction Diary",
+      "agentdiary":"Agent Diary"
+    },
+    "system":{
+      "manage": "System Manage",
+      "admin": "System Admin",
+      "log": "System Log"
+    },
+    "activity":{
+      "manage":"Activity Manage",
+      "prop":"Prop List",
+      "gaveprop":"Gave Prop",
+      "forum":"Forum List",
+      "list":"Activity List"
+    },
+    "agent":{
+      "manage":"Agent Manage",
+      "create":"Agent Create",
+      "list":"Agent List",
+      "set":"渠道游戏管理",
+      "data":"Agent Data",
+      "message":"Promotion information"
+    },
+    "agentdata":{
+      "register":"Register",
+      "recharge":"Recharge",
+      "analysis":"Analysis",
+      "divided":"Divided Log"
+    },
+    "coin":{
+      "sys":"Coin System",
+      "stock":{
+        "manage":"Coin Stock",
+        "recharge":"Stock Recharge",
+        "list":"Stock List",
+        "order":"Stock Order"
+      },
+      "distribute":{
+        "manage":"Distribute",
+        "make":"Distribute Make",
+        "batch":"Distribute Batch"
+      },
+      "account":{
+        "manage":"Account Manager",
+        "list":"Account List"
+      },
+      "record":{
+        "manage":"Usage Log",
+        "playerStat":"Player Stat",
+        "agentStat":"Agent Stat",
+        "logs":"Log Query"
+      }
+    },
+    "package":{
+      "manage":"Package Manage",
+      "take":"Take",
+      "set":"Set"
+    },
+    "bank":{
+      "manage":"Bank Manage",
+      "account":"Account",
+      "preauth":"Preauth List",
+      "transfer":"Transfer",
+      "deal":"Deal",
+      "owndeal":"个人流水",
+      "npreauth":"Preauth Cancel",
+      "overdraw":"Set Overdraw",
+      "rate":"Currency Rate",
+      "pay":{"list":"Pay List"}
+    },
+    "bbs":{
+      "manage":"Forum Manage",
+      "forum":"Forum List",
+      "topic":"Post List"
+    },
+    "oms":{
+      "manage":"Operational activities",
+      "aty1":"Free jb"
+    },
+    "app":{
+      "manage":"App Manage",
+      "create":"App Create",
+      "upload":"App Upload"
+    },
+    "shop":{
+      "manage":"Shop Manage",
+      "product":"Shop Product",
+      "lottery":"Shop Lottery",
+      "lotteryWin":"Shop Lottery Winner"
+    },
+    "home":{
+      "manage":"Hall Manage",
+      "vip":{
+        "config":"VIP Config",
+        "cond":"VIP CON",
+        "item":"VIP Item",
+        "set":"VIP Set"
+      },
+      "bbs":{
+        "manage":"BBS Manage",
+        "forum":"Forum List",
+        "topic":"Topic List"
+      },
+      "activitys":"Activitys",
+      "checkin":"Checkin",
+      "turntable":"Turntable",
+      "sendnotice":"Send Notice",
+      "senddak":"Send Mail",
+      "rank":"Rank Set"
+    },
+    "room":{
+      "manage":"Room Manage"
+    },
+    "robot": {
+      "manage":"Robot Manage"
+    },
+    "wordfilter":{
+      "manage":"Wordfilter",
+      "list":"List",
+      "log":"Log"
+    },
+    "guestbook":{
+      "manage":"Guest book",
+      "list":"List"
+    },
+    "report":{
+      "manage":"Report",
+      "account":"Account"
+    },
+    "promote":"Promote"
+  }
+}

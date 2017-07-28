@@ -1,0 +1,45 @@
+{
+  "name": "jm-oms-console",
+  "version": "1.0.3",
+  "description": "general admin console",
+  "scripts": {
+    "start": "node node_modules/http-server/bin/http-server -o"
+  },
+  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jm-root/jm-oms-console.git"
+  },
+  "author": "Jeff YU",
+  "license": "MIT",
+  "dependencies": {
+    "echarts": "^3.5.3",
+    "grunt-contrib-cssmin": "^0.14.0",
+    "grunt-contrib-watch": "^0.6.1",
+    "grunt-usemin": "^3.1.1",
+    "jm-acl": "^0.0.15",
+    "jm-config": "^1.0.2",
+    "jm-ms": "^0.0.19",
+    "jm-oms": "^0.0.2",
+    "jm-sdk-core": "^0.0.12",
+    "jm-sso": "^0.2.16",
+    "lodash": "^4.17.4",
+    "moment": "^2.18.1"
+  },
+  "devDependencies": {
+    "grunt": "^0.4.5",
+    "grunt-bower-install-simple": "^0.9.3",
+    "grunt-bump": "^0.0.15",
+    "grunt-changelog": "^0.2.2",
+    "grunt-contrib-clean": "^0.6.0",
+    "grunt-contrib-concat": "^0.5.0",
+    "grunt-contrib-copy": "^0.5.0",
+    "grunt-contrib-htmlmin": "^0.3.0",
+    "grunt-contrib-uglify": "^0.5.1",
+    "grunt-recess": "^1.0.0",
+    "grunt-swig": "^0.2.1",
+    "gruntfile-gtx": "^0.3.0",
+    "http-server": "^0.9.0",
+    "require-directory": "^2.0.0"
+  }
+}

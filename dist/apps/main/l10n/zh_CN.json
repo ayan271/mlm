@@ -1,0 +1,86 @@
+{
+  "COPYRIGHT": "有限公司<br>&copy; 2017",
+  "HEADNAME": "MLM",
+  "login": {
+    "LOGIN": "登录",
+    "FORGOT_PASSWORD": "忘记密码?",
+    "ENTER_LOGIN_INFO": "请输入登录信息",
+    "ACCOUNT": "账号",
+    "PASSWORD": "密码",
+    "VERIFICATION": "验证码"
+  },
+  "footer":{
+    "homepage":"首页",
+    "increase":"上分",
+    "decrease":"下分",
+    "player":"玩家",
+    "transfer":"转账"
+  },
+  "nav": {
+    "HEADER": "导航",
+    "MAIN": "首页"
+  },
+  "app": {
+    "member":{
+      "manage":"会员管理",
+      "info":"会员信息",
+      "vip":"vip会员",
+      "supervip":"超级vip会员",
+      "member":"普通会员",
+      "config":"vip奖励配置",
+      "newmember":"创建会员"
+    },
+    "integral":{
+      "manage":"积分管理",
+      "info":"积分信息",
+      "give":"赠送积分",
+      "withdraw":"撤回积分",
+      "log":"操作记录"
+    },
+    "team":{
+      "manage":"小组管理",
+      "config":"小组配置",
+      "new":"创建小组",
+      "manage1":"小组管理",
+      "out":"出组管理"
+    },
+    "acl": {
+      "manage":"权限管理",
+      "user": "用户管理",
+      "role": "角色管理",
+      "resource": "资源管理"
+    },
+    "config":{
+      "manage": "配置管理",
+      "list": "管理配置信息",
+      "menus": "菜单配置",
+      "systeminit": "系统初始化",
+      "systemconfig": "系统配置",
+      "unified": "统一配置"
+    },
+    "system":{
+      "manage": "系统管理",
+      "admin": "管理员列表",
+      "log": "系统日志"
+    },
+    "bank":{
+      "manage":"银行管理",
+      "account":"账户列表",
+      "preauth":"预授权列表",
+      "transfer":"转账",
+      "deal":"交易流水",
+      "owndeal":"个人流水",
+      "npreauth":"取消授权",
+      "overdraw":"设置额度",
+      "rate":"货币对率",
+      "pay":{"list":"支付列表"}
+    },
+    "shop":{
+      "manage":"商城管理",
+      "product":"商品管理",
+      "lottery":"夺宝管理",
+      "lotteryWin":"中奖管理"
+    },
+    "promote":"推广地址"
+  }
+}

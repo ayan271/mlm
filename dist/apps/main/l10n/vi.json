@@ -1,0 +1,209 @@
+{
+  "COPYRIGHT": "công ty trách nhiệm hữu hạn<br>&copy; 2017",
+  "HEADNAME": "MLM",
+  "login": {
+    "LOGIN": "đăng nhập",
+    "FORGOT_PASSWORD": "quên mật khẩu?",
+    "ENTER_LOGIN_INFO": "mời nhập thông tin đăng nhập",
+    "ACCOUNT": "tài khoản",
+    "PASSWORD": "mật khẩu",
+    "VERIFICATION": "CAPTCHA"
+  },
+  "footer":{
+    "homepage":"首页",
+    "increase":"上分",
+    "decrease":"退分",
+    "player":"玩家",
+    "bank":"银行"
+  },
+  "nav": {
+    "HEADER": "menu hướng dẫn",
+    "MAIN": "trang đầu"
+  },
+  "app": {
+    "per": {
+      "manage":"quyền hạn quản lý",
+      "org": "quản lý tổ chức",
+      "users": "quản lý người dùng",
+      "role": "quản lý nhân vật",
+      "resource": "quản lý tài nguyên",
+      "roleUser": "nhân vật người dùng"
+    },
+    "acl": {
+      "manage":"权限管理(新)",
+      "user": "用户管理",
+      "role": "角色管理",
+      "resource": "资源管理"
+    },
+    "config":{
+      "manage": "quản lý bố trí",
+      "list": "thông tin quản lý bố trí",
+      "menus": "menu bố trí",
+      "systeminit": "reset hệ thống",
+      "systemconfig": "hệ thống bố trí",
+      "unified": "thống nhất bố trí"
+    },
+    "recharge":{
+      "manage": "quản lý nạp tiền",
+      "cardtype": "loại thẻ điểm",
+      "card": "thẻ điểm nhà phát hành",
+      "third": "nạp tiền từ bên thứ ba",
+      "cardlog": "nhật ký nạp thẻ điểm"
+    },
+    "player":{
+      "manage": "quản lý người chơi",
+      "info": "thông tin người chơi",
+      "online": "trạng thái online",
+      "record": "nhật ký trò chơi",
+      "givelog": "nhật ký tặng"
+    },
+    "uppoints":{
+      "manage":"Lên điểm"
+    },
+    "backpoints":{
+      "manage":"Xuống điểm",
+      "list":"Xuống điểm xử lý",
+      "log":"Xuống điểm hồ sơ"
+    },
+    "datastatistics":{
+      "manage":"数据统计",
+      "playerdata":"玩家日报表",
+      "agentdata":"渠道日报表",
+      "logreg":"登录注册日报表",
+      "profit":"盈利日报表",
+      "playerstatistics":"玩家统计",
+      "agentstatistics":"渠道统计",
+      "table":"桌子统计",
+      "playerdiary":"交易流水",
+      "agentdiary":"渠道流水"
+    },
+    "system":{
+      "manage": "quản lý hệ thống",
+      "admin": "danh sách quản trị viên",
+      "log": "nhật ký hệ thống",
+      "changescore":"Cộng/trừ điểm"
+    },
+    "activity":{
+      "manage":"quản lý hoạt động",
+      "prop":"danh sách công cụ",
+      "gaveprop":"phân phối công cụ",
+      "forum":"forum hoạt động",
+      "list":"danh sách hoạt động"
+    },
+    "agent":{
+      "manage":"quản lý đường dẫn",
+      "create":"kiến tạo đường dẫn cấp dưới",
+      "list":"danh sách đường dẫn",
+      "set":"渠道游戏管理",
+      "data":"số liệu đường dẫn",
+      "message":"Thông tin khuyến mãi"
+    },
+    "agentdata":{
+      "register":"đăng ký",
+      "recharge":"nạp tiền",
+      "analysis":"phân tích số liệu",
+      "divided":"Chia thành bản ghi"
+    },
+    "coin":{
+      "sys":"hệ thống T xu",
+      "stock":{
+        "manage":"T xu tồn kho",
+        "recharge":"nạp T xu",
+        "list":"danh sách tồn kho",
+        "order":"quản lý đơn hàng"
+      },
+      "distribute":{
+        "manage":"phân phát T xu",
+        "make":"tạo thành mã nạp lần đầu",
+        "batch":"phân phát sỉ"
+      },
+      "account":{
+        "manage":"quản lý tài khoản",
+        "list":"danh sách tài khoản"
+      },
+      "record":{
+        "manage":"nhật ký sử dụng",
+        "playerStat":"thống kê tài khoản người chơi",
+        "agentStat":"thống kê tài khoản đường dẫn",
+        "logs":"truy xuất nhật ký"
+      }
+    },
+    "package":{
+      "manage":"Quản lý gói",
+      "take":"Đem cái túi",
+      "set":"Gói cài đặt"
+    },
+    "bank":{
+      "manage":"quản lý ngân hàng",
+      "account":"danh sách tài khoản",
+      "preauth":"danh sách chuyển quyền dự bị",
+      "transfer":"chuyển khoản",
+      "deal":"qui trình giao dịch",
+      "owndeal":"个人流水",
+      "npreauth":"hủy bỏ chuyển quyền",
+      "overdraw":"giới hạn cài đặt",
+      "rate":"chuyển đổi tiền tệ",
+      "pay":{"list":"danh sách thanh toán"}
+    },
+    "bbs":{
+      "manage":"quản lý diễn dàn",
+      "forum":"danh sách forum",
+      "topic":"danh sách bài viết"
+    },
+    "oms":{
+      "manage":"运营活动",
+      "aty1":"免费送金币活动"
+    },
+    "app":{
+      "manage":"quản lý ứng dụng",
+      "create":"danh sách ứng dụng",
+      "upload":"tải lên ứng dụng"
+    },
+    "shop":{
+      "manage":"nhật ký cửa hàng",
+      "product":"quản lý thương phẩm",
+      "lottery":"quản lý đoạt bảo",
+      "lotteryWin":"quản lý trúng thưởng"
+    },
+    "home":{
+      "manage":"quản lý sảnh",
+      "vip":{
+        "config":"bố trí VIP",
+        "cond":"điều kiện VIP",
+        "item":"loại ưu đãi",
+        "set":"phân phối ưu đãi"
+      },
+      "bbs":{
+        "manage":"quản lý diễn đàn",
+        "forum":"danh sách forum",
+        "topic":"danh sách bài viết"
+      },
+      "activitys":"danh sách hoạt động",
+      "checkin":"cài đặt checkin",
+      "turntable":"bố trí vòng xoay",
+      "sendnotice":"phát công cáo",
+      "senddak":"gửi email",
+      "rank":"cài đặt bảng xếp hạng"
+    },
+    "room":{
+      "manage":"quản lý phòng"
+    },
+    "robot":{
+      "manage":"Robot Manage"
+    },
+    "wordfilter":{
+      "manage":"quản lý những từ ngữ nhạy cảm",
+      "list":"danh sách từ ngữ nhạy cảm",
+      "log":"nhật ký chặn"
+    },
+    "guestbook":{
+      "manage":"quản lý",
+      "list":"danh sách tin nhắn"
+    },
+    "report":{
+      "manage":"bảng biểu thống kê",
+      "account":"thống kê bảng điểm"
+    },
+    "promote":"địa chỉ quảng bá"
+  }
+}

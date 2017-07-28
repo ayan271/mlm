@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" data-ng-app="app">
+<head>
+  <meta charset="utf-8" />
+  <title>mlm</title>
+  <meta name="description" content="oms" />
+  <meta name="keywords" content="mlm" />
+  <meta content="yes" name="apple-mobile-web-app-capable">
+  <meta name="viewport" content="width=device-width,height=device-height,inital-scale=1.0,maximum-scale=1.0,user-scalable=no;">
+  <link rel="stylesheet" href="../libs/assets/animate.css/animate.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/assets/font-awesome/css/font-awesome.min.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/assets/simple-line-icons/css/simple-line-icons.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/jquery/bootstrap/dist/css/bootstrap.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/angular/angularjs-toaster/toaster.css" type="text/css" />
+  <link rel="stylesheet" href="../libs/angular/ag-grid/dist/styles/ag-grid.css" type="text/css" />
+
+  <link rel="stylesheet" href="css/app.min.css">
+  <link rel="stylesheet" href="css/main.css" type="text/css" />
+
+  <script>
+      (function(){
+          //使用navigator.userAgent来判断浏览器类型，需要注意的是chrome浏览器的navigator.userAgent会包含safari字符串（safari则不包含chrome，根据此区分chrome和safafi），所以需要区分时注意
+          console.log(navigator.userAgent);
+          if(navigator.userAgent.indexOf("Firefox")>0 || navigator.userAgent.indexOf("Chrome/")>0 || navigator.userAgent.indexOf("Safari")>0){
+              return ;
+          }else{
+              alert('请使用谷歌、火狐或Safari浏览器');
+          }
+      }());
+  </script>
+</head>
+<body ng-controller="AppCtrl">
+  <toaster-container toaster-options="{'position-class': 'toast-top-right', 'close-button':true}"></toaster-container>
+  <div class="app" id="app" ng-class="{'app-header-fixed':app.settings.headerFixed, 'app-aside-fixed':app.settings.asideFixed, 'app-aside-folded':app.settings.asideFolded, 'app-aside-dock':app.settings.asideDock, 'container':app.settings.container}" ui-view></div>
+
+<script src="js/app.angular.js"></script>
+  <!-- Config -->
+  <script src="apps/config.js"></script>
+  <!-- Apps -->
+  <script src="apps/common/js/index.js"></script>
+  <script src="apps/main/js/index.js"></script>
+  <script src="apps/dashboard/js/index.js"></script>
+  <script src="apps/acl/js/index.js"></script>
+  <script src="apps/member/js/index.js"></script>
+  <script src="apps/integral/js/index.js"></script>
+  <script src="apps/team/js/index.js"></script>
+  <!-- endApps -->
+  <!-- Lazy loading -->
+</body>
+</html>
