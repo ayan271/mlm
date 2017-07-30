@@ -81,10 +81,10 @@
         <!--【表身】-->
         <div class="scroll-box" ng-style="tablestyle">
             <table class="form-table table table-striped table-bordered mobiletable table-hover">
-                <tr ng-repeat="row in users.rows" class="active" ng-if="total">
-                    <td>{{row.uid }}</td>
-                    <td>{{row.nick}}</td>
-                    <td>{{row.agent_out_jb | number}}</td>
+                <tr ng-repeat="row in teams.rows" class="active" ng-if="total">
+                    <td>{{row._id }}</td>
+                    <td>{{row.code}}</td>
+                    <td>{{row.type}}</td>
                     <td>{{row.up_jb | number}}</td>
                     <td>{{row.crtime | date:'yyyy-MM-dd'}}</td>
                 </tr>
