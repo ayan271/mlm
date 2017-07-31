@@ -19,7 +19,7 @@
                             resolve: lazyLoadProvider.load([path + 'js/controllers/index.js'])
                         })
                         .state('app.team.config', {
-                            url: '/info',
+                            url: '/config',
                             template: '<div ui-view class="fade-in-down"></div>',
                             resolve: lazyLoadProvider.load([path + 'js/controllers/config.js'])
                         })
@@ -43,9 +43,20 @@
                         })
                         .state('app.team.manage', {
                             url: '/manage',
-                            templateUrl: path +'tpl/manage.html',
-                            controller: 'ManageCtrl',
-                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen',path + 'js/controllers/manage.js'])
+                            template: '<div ui-view class="fade-in-down"></div>',
+                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen',path + 'js/controllers/teaminfo.js'])
+                        })
+                        .state('app.team.manage.list', {
+                            url: '/list',
+                            templateUrl: path +'tpl/teaminfo_list.html',
+                            controller: 'TeaminfoListCtrl',
+                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen'])
+                        })
+                        .state('app.team.manage.edit', {
+                            url: '/edit/{id}',
+                            templateUrl: path +'tpl/teaminfo_edit.html',
+                            controller: 'TeaminfoEditCtrl',
+                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen'])
                         })
                         .state('app.team.out', {
                             url: '/out',

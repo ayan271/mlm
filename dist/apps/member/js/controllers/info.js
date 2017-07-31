@@ -93,20 +93,30 @@ app.controller('InfolistCtrl', ['$scope', '$state', '$http','global',function ($
     }
     $scope.getdata();
 
-    $scope.details = function (key1,key2,key3) {
-        var playerobj = {
-            userid:key1,
-            date:key2,
-            account:key3
+    $scope.new = function (key) {
+        // var playerobj = {
+        //     userid:key1,
+        //     date:key2,
+        //     account:key3
+        // }
+        // $state.go("app.member.info.edit",{object:JSON.stringify(playerobj)});
+        if(key){
+            $state.go("app.member.info.edit",{id:key});
+        }else{
+            $state.go("app.member.info.edit");
         }
-        $state.go("app.datastatistics.playerdiary",{object:JSON.stringify(playerobj)});
+
     }
 
     $scope.$watch('search.date', function () {
         $scope.getdata(1);
     });
+
 }]);
 
-app.controller('InfoeditCtrl', ['$scope', '$state', '$http','global',function ($scope, $state, $http,global) {
+app.controller('InfoeditCtrl', ['$scope', '$state', '$http','global','$stateParams',function ($scope, $state, $http,global,$stateParams) {
+
+    // var id = $stateParams.id;
+    // console.info(id);
 
 }]);

@@ -39,7 +39,7 @@
     </div>
 
     <div class="pull-left headpadd m-l-sm">
-        <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-plus"></i> 新建</button>
+        <button type="submit" class="btn btn-sm btn-info btn-rounded" ng-click="new()"><i class="fa fa-plus"></i> 新建</button>
         <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-refresh"></i> 刷新</button>
     </div>
 </div>
@@ -83,14 +83,14 @@
                 <th>组号</th>
                 <th>组内编号</th>
                 <th>入组时间</th>
-                <th style="width: 17px" ng-if="agentdata.rows.length>16"></th>
+                <th style="width: 17px" ng-if="users.rows.length>16"></th>
             </tr>
         </table>
         <!--【fixed-thead表头】-->
         <!--【表身】-->
         <div class="scroll-box" ng-style="tablestyle">
             <table class="form-table table table-striped table-bordered mobiletable table-hover">
-                <tr ng-repeat="row in users.rows" class="active" ng-if="total">
+                <tr ng-repeat="row in users.rows" class="active" ng-if="total" ng-dblclick="new(row.uid)">
                     <td>{{row.uid }}</td>
                     <td>{{row.nick}}</td>
                     <td>{{row.agent_out_jb | number}}</td>
@@ -108,7 +108,7 @@
                 <td>{{agentdata.stat.agent_out_jb | number}}</td>
                 <td>{{agentdata.stat.up_jb | number}}</td>
                 <td>{{agentdata.stat.down_jb | number}}</td>
-                <td style="width: 17px" ng-if="agentdata.rows.length>18"></td>
+                <td style="width: 17px" ng-if="users.rows.length>16"></td>
             </tr>
         </table>
         <!--【fixed-tfoot表尾】-->

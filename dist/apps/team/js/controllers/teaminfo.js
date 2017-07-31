@@ -1,5 +1,5 @@
 'use strict';
-app.controller('ManageCtrl', ['$scope', '$state', '$http','global',function ($scope, $state, $http,global) {
+app.controller('TeaminfoListCtrl', ['$scope', '$state', '$http','global',function ($scope, $state, $http,global) {
     var sso = jm.sdk.sso;
     var history = global.agentListHistory||(global.agentListHistory={});
     $scope.pageSize = history.pageSize||$scope.defaultRows;
@@ -52,7 +52,6 @@ app.controller('ManageCtrl', ['$scope', '$state', '$http','global',function ($sc
         var date = search.date||{};
         var startDate = date.startDate || "";
         var endDate = date.endDate|| "";
-        var agent = search.agent;
         $http.get(meixia+'/mlm/teams', {
             params:{
                 token: sso.getToken(),
@@ -60,9 +59,6 @@ app.controller('ManageCtrl', ['$scope', '$state', '$http','global',function ($sc
                 rows:$scope.pageSize||20,
                 startDate:startDate.toString(),
                 endDate:endDate.toString(),
-                agent:agent,
-                hasAccount:true,
-                rtype:1,
                 search: search.keyword
             }
         }).success(function(result){
@@ -93,16 +89,55 @@ app.controller('ManageCtrl', ['$scope', '$state', '$http','global',function ($sc
     }
     $scope.getdata();
 
-    $scope.details = function (key1,key2,key3) {
-        var playerobj = {
-            userid:key1,
-            date:key2,
-            account:key3
-        }
-        $state.go("app.datastatistics.playerdiary",{object:JSON.stringify(playerobj)});
+    $scope.details = function (key) {
+        $state.go("app.team.manage.edit",{ id:key});
     }
 
     $scope.$watch('search.date', function () {
         $scope.getdata(1);
     });
+}]);
+
+app.controller('TeaminfoEditCtrl', ['$scope', '$state', '$http','global','$stateParams',function ($scope, $state, $http,global,$stateParams) {
+    var sso = jm.sdk.sso;
+    var id = $stateParams.id;
+    console.info(id);
+    var getdata = function(_page) {
+        $http.get(meixia+'/mlm/teams/'+id, {
+        }).success(function(result){
+            console.info(result);
+            if(result.err){
+                $scope.error(result.msg);
+            }else{
+                // $scope.teams  = result;
+                $scope.teams1 = [];
+                result.users[0]?($scope.teams1 = result.users[0].user.nick):null;
+                console.info($scope.teams1);
+                $scope.teams2 = [];
+                result.users[1]?$scope.teams2.push(result.users[1].user.nick):null;
+                result.users[2]?$scope.teams2.push(result.users[2].user.nick):null;
+                console.info($scope.teams2);
+                $scope.teams3 = [];
+                result.users[3]?$scope.teams3.push(result.users[3].user.nick):null;
+                result.users[4]?$scope.teams3.push(result.users[4].user.nick):null;
+                result.users[5]?$scope.teams3.push(result.users[5].user.nick):null;
+                result.users[6]?$scope.teams3.push(result.users[6].user.nick):null;
+                console.info($scope.teams3);
+                $scope.teams4 = [];
+                result.users[7]?$scope.teams4.push(result.users[7].user.nick):null;
+                result.users[8]?$scope.teams3.push(result.users[8].user.nick):null;
+                result.users[9]?$scope.teams3.push(result.users[9].user.nick):null;
+                result.users[10]?$scope.teams3.push(result.users[10].user.nick):null;
+                result.users[11]?$scope.teams3.push(result.users[11].user.nick):null;
+                result.users[12]?$scope.teams3.push(result.users[12].user.nick):null;
+                result.users[13]?$scope.teams3.push(result.users[13].user.nick):null;
+                result.users[14]?$scope.teams3.push(result.users[14].user.nick):null;
+                console.info($scope.teams4);
+            }
+        }).error(function(msg, code){
+            $scope.errorTips(code);
+        });
+    }
+    getdata();
+
 }]);

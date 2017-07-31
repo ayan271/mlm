@@ -1,7 +1,7 @@
 <div class="bg-light lter b-b wrapper">
     <h1 class="h4 font-bold">
         <span>当前位置：</span>
-        <span class="hcolor">会员信息</span>
+        <span class="hcolor">小组管理</span>
     </h1>
 </div>
 <div>
@@ -39,7 +39,7 @@
     </div>
 
     <div class="pull-left headpadd m-l-sm">
-        <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-plus"></i> 新建</button>
+        <!--<button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-plus"></i> 新建</button>-->
         <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-refresh"></i> 刷新</button>
     </div>
 </div>
@@ -69,24 +69,31 @@
         <!--【fixed-thead表头】-->
         <table class="form-table fixed-thead " cellpadding="0" cellspacing="0" >
             <tr class="thr tbcolor">
-                <th>账号</th>
-                <th>昵称</th>
-                <th>组号</th>
-                <th>组内编号</th>
-                <th>入组时间</th>
-                <th style="width: 17px" ng-if="agentdata.rows.length>16"></th>
+                <th>组名</th>
+                <th>编号</th>
+                <th>组长</th>
+                <th>副组长</th>
+                <th>人数</th>
+                <th>创建时间</th>
+                <th>解体时间</th>
+                <th>备注</th>
+                <th style="width: 17px" ng-if="agentdata.rows.length>15"></th>
             </tr>
         </table>
         <!--【fixed-thead表头】-->
         <!--【表身】-->
         <div class="scroll-box" ng-style="tablestyle">
             <table class="form-table table table-striped table-bordered mobiletable table-hover">
-                <tr ng-repeat="row in teams.rows" class="active" ng-if="total">
+                <tr ng-repeat="row in teams.rows" class="active" ng-if="total" ng-dblclick="details(row._id)">
                     <td>{{row._id }}</td>
                     <td>{{row.code}}</td>
                     <td>{{row.type}}</td>
+                    <td>{{row.code}}</td>
+                    <td>{{row.type}}</td>
+                    <td>{{row.code}}</td>
                     <td>{{row.up_jb | number}}</td>
                     <td>{{row.crtime | date:'yyyy-MM-dd'}}</td>
+
                 </tr>
             </table>
         </div>
@@ -99,7 +106,10 @@
                 <td>{{agentdata.stat.agent_out_jb | number}}</td>
                 <td>{{agentdata.stat.up_jb | number}}</td>
                 <td>{{agentdata.stat.down_jb | number}}</td>
-                <td style="width: 17px" ng-if="agentdata.rows.length>18"></td>
+                <td>{{agentdata.stat.up_jb | number}}</td>
+                <td>{{agentdata.stat.down_jb | number}}</td>
+                <td>{{agentdata.stat.up_jb | number}}</td>
+                <td style="width: 17px" ng-if="agentdata.rows.length>15"></td>
             </tr>
         </table>
         <!--【fixed-tfoot表尾】-->
