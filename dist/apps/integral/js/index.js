@@ -25,10 +25,10 @@
                             resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen',path + 'js/controllers/info.js'])
                         })
                         .state('app.integral.detail', {
-                            url: '/detail',
+                            url: '/detail/{id}{uid}',
                             templateUrl: path +'tpl/detail.html',
                             controller: 'DetailCtrl',
-                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen',path + 'js/controllers/detail.js'])
+                            resolve: lazyLoadProvider.load(['ngTagsInput','localytics.directives','chosen',path + 'js/controllers/info.js'])
                         })
                         .state('app.integral.give', {
                             url: '/give',

@@ -1,4 +1,170 @@
 'use strict';
 app.controller('MemberCtrl', ['$scope', '$state', '$http','global',function ($scope, $state, $http,global) {
+    var sso = jm.sdk.sso;
+    var history = global.agentListHistory||(global.agentListHistory={});
+    $scope.pageSize = history.pageSize||$scope.defaultRows;
+    $scope.search = {};
+    $scope.search.date = $scope.search.date || {};
+    var page = 1;
+    if(com === 'mx'){
+        $scope.com = true;
+    }
+    $scope.tablestyle = {};
+    if($scope.isSmartDevice){
+        $scope.tablestyle = {};
+    }else{
+        $scope.tablestyle = {
+            height:$scope.app.navHeight-235+'px',
+            border:'1px solid #cccccc'
+        }
+    }
+
+    $scope.widthfields = [
+        {field:'account',width:150},
+        {field:'nick',width:150},
+        {field:'agent',width:150},
+        {field:'up',width:150},
+        {field:'down',width:150},
+        {field:'jbbalance',width:150},
+        {field:'detail',width:150}
+    ];
+
+    $scope.dateOptions = angular.copy(global.dateRangeOptions);
+    $scope.dateOptions.startDate = moment().subtract(1, 'months');
+    $scope.dateOptions.endDate = moment();
+    $scope.dateOptions.opens = 'left';
+
+    $scope.left = function () {
+        if($scope.page>1){
+            --page;
+            $scope.getdata();
+        }
+    }
+    $scope.right = function () {
+        if($scope.page<$scope.pages){
+            ++page;
+            $scope.getdata();
+        }
+    };
+    $scope.getdata = function(_page) {
+        if(_page) page = _page;
+        $scope.nodata = false;
+        $scope.moreLoading = true;
+        var search = $scope.search;
+        var date = search.date||{};
+        var startDate = date.startDate || "";
+        var endDate = date.endDate|| "";
+        var agent = search.agent;
+        $http.get(meixia+'/users', {
+            params:{
+                token: sso.getToken(),
+                page:page,
+                rows:$scope.pageSize||20,
+                startDate:startDate.toString(),
+                endDate:endDate.toString(),
+                agent:agent,
+                hasAccount:true,
+                rtype:1,
+                search: search.keyword
+            }
+        }).success(function(result){
+            if(result.err){
+                $scope.error(result.msg);
+            }else{
+                $scope.moreLoading = false;
+                $('html,body').animate({ scrollTop: 0 }, 100);
+                $('.mobilebody').animate({ scrollTop: 0 }, 0);  //后面的0是延时
+                $('.mobilebox').animate({scrollLeft: 0},0);
+                $scope.users  = result;
+                if(result.total){
+                    $scope.nodata = false;
+                    $scope.page = result.page;
+                    $scope.pages = result.pages;
+                    $scope.total = result.total;
+                    $scope.totalnumber = global.reg(result.total);
+                }else{
+                    $scope.nodata = true;
+                    $scope.pages = 0;
+                    $scope.total = 0;
+                    $scope.totalnumber = 0;
+                }
+            }
+        }).error(function(msg, code){
+            $scope.errorTips(code);
+        });
+    }
+    $scope.getdata();
+
+    $scope.new = function (key) {
+        // var playerobj = {
+        //     userid:key1,
+        //     date:key2,
+        //     account:key3
+        // }
+        // $state.go("app.member.info.edit",{object:JSON.stringify(playerobj)});
+        if(key){
+            $state.go("app.member.info.edit",{id:key});
+        }else{
+            $state.go("app.member.info.edit");
+        }
+
+    }
+
+    $scope.$watch('search.date', function () {
+        $scope.getdata(1);
+    });
+
+    $scope.grouping = function(data){
+        console.info(data);
+
+        var info = '账号：'+data.uid+'</br>'+'积分：'+data.nick+'</br>'+'组号：'+data.nick+'</br>'+'组内身份：'+data.mobile+'</br>'+'组内编号：'+data.mobile;
+
+        if (!info) {
+            $scope.openTips({
+                title: global.translateByKey('openTips.title'),
+                content: global.translateByKey('player.info.TipInfo.balance'),
+                cancelTitle: global.translateByKey('openTips.cancelDelContent'),
+                singleButton: true
+            });
+        } else {
+            $scope.openTips({
+                title: "会员分组",
+                content: info,
+                okTitle: "确定",
+                cancelTitle: "取消",
+                okCallback: function ($s) {
+
+                    $http.post(agentUri + '/upcoin', {toUserId: toUserId, amount: amount, memo: memo}, {
+                        params: {
+                            token: sso.getToken()
+                        }
+                    }).success(function (result) {
+                        if (result.err) {
+                            $timeout(function () {
+                                $scope.error(result.msg);
+                            });
+                        } else {
+                            $timeout(function () {
+                                $scope.success(global.translateByKey('common.succeed'));
+                            });
+                            $scope.amount = "";
+                            $scope.memo = "";
+                            $scope.player = null;
+                            $scope.play.amount = null;
+                            $scope.querybank();
+                            if (document.getElementById("searchinput")) {
+                                document.getElementById("searchinput").value = "";
+                            }
+                            ;
+                            $scope.nick = "";
+                        }
+                    }).error(function (msg, code) {
+                        $scope.errorTips(code);
+                    });
+
+                }
+            });
+        }
+    }
 
 }]);

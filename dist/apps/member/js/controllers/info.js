@@ -6,7 +6,9 @@ app.controller('InfolistCtrl', ['$scope', '$state', '$http','global',function ($
     $scope.search = {};
     $scope.search.date = $scope.search.date || {};
     var page = 1;
-
+    if(com === 'mx'){
+        $scope.com = true;
+    }
     $scope.tablestyle = {};
     if($scope.isSmartDevice){
         $scope.tablestyle = {};

@@ -44,15 +44,6 @@
         <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-refresh"></i> 刷新</button>
     </div>
 </div>
-<!--<div>-->
-<!--<div class="panel panel-default">-->
-<!--<div class="line b-b" style="margin: 0"></div>-->
-<!--<div class="panel-body">-->
-<!--<span style="font-size: larger"></span>-->
-<!--<div ng-style="{height:app.navHeight-200+'px'}" ag-grid="gridOptions" class="ag-fresh"></div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <div class="line b-b"></div>
 <!--ng-style="{height:app.navHeight-200+'px'}"-->
@@ -80,10 +71,15 @@
         <table class="form-table fixed-thead " cellpadding="0" cellspacing="0" >
             <tr class="thr tbcolor">
                 <th>账号</th>
-                <th>昵称</th>
+                <th>会员号</th>
+                <th>积分</th>
                 <th>组号</th>
+                <th>组内身份</th>
                 <th>组内编号</th>
+                <th>小组人数</th>
                 <th>入组时间</th>
+                <th>推荐人</th>
+                <th>分享人数</th>
                 <th style="width: 17px" ng-if="users.rows.length>16"></th>
             </tr>
         </table>
@@ -95,6 +91,10 @@
                     <td>{{row.uid }}</td>
                     <td>{{row.nick}}</td>
                     <td>{{row.agent_out_jb | number}}</td>
+                    <td>{{row.up_jb | number}}</td><td>{{row.uid }}</td>
+                    <td>{{row.nick}}</td>
+                    <td>{{row.agent_out_jb | number}}</td>
+                    <td>{{row.nick}}</td>
                     <td>{{row.up_jb | number}}</td>
                     <td>{{row.crtime | date:'yyyy-MM-dd'}}</td>
                 </tr>
@@ -106,6 +106,13 @@
             <tr style="color: #0000CC;font-weight: bold">
                 <td >汇总</td>
                 <td>{{agentdata.stat.agent_in_jb | number}}</td>
+                <td>{{agentdata.stat.agent_out_jb | number}}</td>
+                <td>{{agentdata.stat.up_jb | number}}</td>
+                <td>{{agentdata.stat.down_jb | number}}</td>
+                <td>{{agentdata.stat.agent_in_jb | number}}</td>
+                <td>{{agentdata.stat.agent_out_jb | number}}</td>
+                <td>{{agentdata.stat.up_jb | number}}</td>
+                <td>{{agentdata.stat.down_jb | number}}</td>
                 <td>{{agentdata.stat.agent_out_jb | number}}</td>
                 <td>{{agentdata.stat.up_jb | number}}</td>
                 <td>{{agentdata.stat.down_jb | number}}</td>

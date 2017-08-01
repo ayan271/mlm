@@ -93,4 +93,6 @@ const pfm_cy = 'static';
 const pfm_oms = 'oms';
 var omsPlatform = pfm_cy;
 
+var com = 'mx';
+
 var plat;

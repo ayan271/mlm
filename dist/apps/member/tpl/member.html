@@ -43,15 +43,6 @@
         <button type="submit" class="btn btn-sm btn-info btn-rounded"><i class="fa fa-refresh"></i> 刷新</button>
     </div>
 </div>
-<!--<div>-->
-<!--<div class="panel panel-default">-->
-<!--<div class="line b-b" style="margin: 0"></div>-->
-<!--<div class="panel-body">-->
-<!--<span style="font-size: larger"></span>-->
-<!--<div ng-style="{height:app.navHeight-200+'px'}" ag-grid="gridOptions" class="ag-fresh"></div>-->
-<!--</div>-->
-<!--</div>-->
-<!--</div>-->
 
 <div class="line b-b"></div>
 <!--ng-style="{height:app.navHeight-200+'px'}"-->
@@ -76,13 +67,14 @@
 
     <div class="cttable" ng-if="!isSmartDevice">
         <!--【fixed-thead表头】-->
-        <table class="form-table fixed-thead " cellpadding="0" cellspacing="0" >
+        <table class="form-table fixed-thead" cellpadding="0" cellspacing="0" >
             <tr class="thr tbcolor">
                 <th>账号</th>
                 <th>昵称</th>
-                <th>组号</th>
-                <th>组内编号</th>
-                <th>入组时间</th>
+                <th>积分</th>
+                <th>联系方式</th>
+                <th>推荐人</th>
+                <th>操作</th>
                 <th style="width: 17px" ng-if="users.rows.length>16"></th>
             </tr>
         </table>
@@ -93,9 +85,12 @@
                 <tr ng-repeat="row in users.rows" class="active" ng-if="total" ng-dblclick="new(row.uid)">
                     <td>{{row.uid }}</td>
                     <td>{{row.nick}}</td>
-                    <td>{{row.agent_out_jb | number}}</td>
-                    <td>{{row.up_jb | number}}</td>
+                    <td>{{row.uid }}</td>
+                    <td>{{row.mobile}}</td>
                     <td>{{row.crtime | date:'yyyy-MM-dd'}}</td>
+                    <td class="text-center">
+                        <button class="btn btn-xs btn-info" ng-click="grouping(row)">分组</button>
+                    </td>
                 </tr>
             </table>
         </div>
@@ -107,6 +102,7 @@
                 <td>{{agentdata.stat.agent_in_jb | number}}</td>
                 <td>{{agentdata.stat.agent_out_jb | number}}</td>
                 <td>{{agentdata.stat.up_jb | number}}</td>
+                <td>{{agentdata.stat.down_jb | number}}</td>
                 <td>{{agentdata.stat.down_jb | number}}</td>
                 <td style="width: 17px" ng-if="users.rows.length>16"></td>
             </tr>
