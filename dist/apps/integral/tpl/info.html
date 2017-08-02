@@ -101,11 +101,9 @@
                     <col width=""/>
                 </colgroup>
                 <tr>
-                    <th>{{'datastatistics.agentdata.header.rollIn'|translate}}</th>
-                    <th>{{'datastatistics.agentdata.header.rollOut'|translate}}</th>
-                    <th>{{'datastatistics.agentdata.header.increase'|translate}}</th>
-                    <th>{{'datastatistics.agentdata.header.decrease'|translate}}</th>
-                    <th>{{'datastatistics.agentdata.header.summary'|translate}}</th>
+                    <th>账号</th>
+                    <th>积分</th>
+                    <th>积分明细</th>
                 </tr>
             </table>
         </div>
@@ -116,8 +114,6 @@
                     <col width=""/>
                 </colgroup>
                 <tr ng-repeat="row in agentdata.rows" class="active" ng-if="total">
-                    <td>{{row.date | date:'yyyy-MM-dd'}}</td>
-                    <td>{{row.agent_in_jb | number}}</td>
                     <td>{{row.agent_out_jb | number}}</td>
                     <td>{{row.up_jb | number}}</td>
                     <td>{{row.down_jb | number}}</td>
@@ -131,8 +127,6 @@
                     <col width=""/>
                 </colgroup>
                 <tr style="color: #0000CC;font-weight: bold">
-                    <td >{{'datastatistics.agentdata.header.summary'|translate}}</td>
-                    <td data-title="{{'datastatistics.agentdata.header.rollIn'|translate}}" >{{agentdata.stat.agent_in_jb | number}}</td>
                     <td data-title="{{'datastatistics.agentdata.header.rollOut'|translate}}" >{{agentdata.stat.agent_out_jb | number}}</td>
                     <td data-title="{{'datastatistics.agentdata.header.increase'|translate}}" >{{agentdata.stat.up_jb | number}}</td>
                     <td data-title="{{'datastatistics.agentdata.header.decrease'|translate}}" >{{agentdata.stat.down_jb | number}}</td>

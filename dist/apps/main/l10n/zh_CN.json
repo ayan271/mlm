@@ -11,10 +11,9 @@
   },
   "footer":{
     "homepage":"首页",
-    "increase":"上分",
-    "decrease":"下分",
-    "player":"玩家",
-    "transfer":"转账"
+    "vip":"VIP",
+    "team":"小组",
+    "integral":"积分"
   },
   "nav": {
     "HEADER": "导航",
