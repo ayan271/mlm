@@ -115,35 +115,35 @@ angular.module('app')
             return deferred.promise;
         };
 
-        self.getRoles = function () {
-            var deferred = $q.defer();
-            var url = aclUri + '/roles';
-            $http.get(url, {
-                params: {
-                    token: sso.getToken()
-                }
-            }).success(function (result) {
-                var obj = {roles:["superadmin"]};
-                // var obj = {}
-                // var obj = result;
-                // if (obj.err) {
-                //     deferred.reject(obj);
-                // } else {
-                    var roles = obj.roles || [];
-                    self.roles = roles;
-                    if (roles.length) {
-                        deferred.resolve(roles);
-                    } else {
-                        var isWXLogin = localStorage.getItem('isWXLogin');
-                        sso.authError = isWXLogin == 'true' ? '您还不是本站会员' : '您不是本站管理员';
-                        deferred.reject({err: -1, msg: '未分配角色'});
-                    }
-                // }
-            }).error(function (msg, code) {
-                deferred.reject({code: code});
-            });
-            return deferred.promise;
-        };
+        // self.getRoles = function () {
+        //     var deferred = $q.defer();
+        //     // var url = meixia + '/roles';
+        //     $http.get(url, {
+        //         params: {
+        //             token: sso.getToken()
+        //         }
+        //     }).success(function (result) {
+        //         // var obj = {roles:["superadmin"]};
+        //         var obj = {}
+        //         var obj = result;
+        //         if (obj.err) {
+        //             deferred.reject(obj);
+        //         } else {
+        //             var roles = obj.roles || [];
+        //             self.roles = roles;
+        //             if (roles.length) {
+        //                 deferred.resolve(roles);
+        //             } else {
+        //                 var isWXLogin = localStorage.getItem('isWXLogin');
+        //                 sso.authError = isWXLogin == 'true' ? '您还不是本站会员' : '您不是本站管理员';
+        //                 deferred.reject({err: -1, msg: '未分配角色'});
+        //             }
+        //         }
+        //     }).error(function (msg, code) {
+        //         deferred.reject({code: code});
+        //     });
+        //     return deferred.promise;
+        // };
 
         self.getUserPermission = function (resource) {
             var deferred = $q.defer();
