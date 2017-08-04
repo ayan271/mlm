@@ -1,0 +1,79 @@
+.overhidden{
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.wordbreak{
+    word-break: break-all
+}
+
+@media screen and (min-width:320px) and (max-width:375px){
+    .searchwidth{
+        width:141px;
+    }
+    .datewidth{
+        width:155px;
+    }
+    .agentwidth{
+        width:93px;
+    }
+}
+
+@media screen and (min-width:375px) and (max-width:776px){
+    .searchwidth{
+        width:160px;
+    }
+    .datewidth{
+        width:170px;
+    }
+    .agentwidth{
+        width:100px;
+    }
+}
+
+@media screen and (min-width:776px){
+    .searchwidth{
+        width:200px;
+    }
+    .datewidth{
+        width:180px;
+    }
+    .agentwidth{
+        width:150px;
+    }
+}
+
+.mobilebox{
+    overflow-x: auto;
+    overflow-y: hidden;
+    width:auto;
+    position:relative;
+    margin-bottom:5px;
+}
+.mobilehead{
+    text-align:center;
+    position:absolute;
+    width:auto;
+    left:0;
+    top:0;
+}
+
+.mobilehead th {
+    line-height:25px;
+    vertical-align: top;
+}
+.mobilebody{
+    position:absolute;
+    width:auto;
+    overflow-y: auto;
+    overflow-x: hidden;
+    left:0;
+    top:23px;
+}
+
+.mobilefoot{
+    position:absolute;
+    width:auto;
+    left:0;
+    bottom:17px;
+}

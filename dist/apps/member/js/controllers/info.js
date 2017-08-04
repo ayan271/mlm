@@ -62,9 +62,6 @@ app.controller('InfolistCtrl', ['$scope', '$state', '$http','global',function ($
                 rows:$scope.pageSize||20,
                 startDate:startDate.toString(),
                 endDate:endDate.toString(),
-                agent:agent,
-                hasAccount:true,
-                rtype:1,
                 search: search.keyword
             }
         }).success(function(result){

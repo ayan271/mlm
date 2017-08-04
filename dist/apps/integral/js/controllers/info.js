@@ -14,7 +14,7 @@ app.controller('InfoCtrl', ['$scope', '$state', '$http','global',function ($scop
         $scope.tablestyle = {};
     }else{
         $scope.tablestyle = {
-            height:$scope.app.navHeight-235+'px',
+            height:$scope.app.navHeight-220+'px',
             border:'1px solid #cccccc'
         }
     }
@@ -62,9 +62,6 @@ app.controller('InfoCtrl', ['$scope', '$state', '$http','global',function ($scop
                 rows:$scope.pageSize||20,
                 startDate:startDate.toString(),
                 endDate:endDate.toString(),
-                agent:agent,
-                hasAccount:true,
-                rtype:1,
                 search: search.keyword
             }
         }).success(function(result){
@@ -121,7 +118,7 @@ app.controller('DetailCtrl', ['$scope', '$state', '$http','global','$stateParams
         $scope.tablestyle = {};
     }else{
         $scope.tablestyle = {
-            height:$scope.app.navHeight-235+'px',
+            height:$scope.app.navHeight-220+'px',
             border:'1px solid #cccccc'
         }
     }

@@ -14,7 +14,7 @@ app.controller('LogCtrl', ['$scope', '$state', '$http','global',function ($scope
         $scope.tablestyle = {};
     }else{
         $scope.tablestyle = {
-            height:$scope.app.navHeight-235+'px',
+            height:$scope.app.navHeight-215+'px',
             border:'1px solid #cccccc'
         }
     }

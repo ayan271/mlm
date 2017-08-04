@@ -97,7 +97,7 @@
     </div>
 
 
-    <div class="mobilebox" ng-if="isSmartDevice" ng-style="{height:app.navHeight-202+'px'}" ng-if="isSmartDevice">
+    <div class="mobilebox" ng-if="isSmartDevice" ng-if="isSmartDevice">
         <div class="mobilehead">
             <table class="form-table fixed-thead " cellpadding="0" cellspacing="0" >
                 <colgroup>
@@ -113,7 +113,7 @@
                 </tr>
             </table>
         </div>
-        <div class="mobilebody" ng-style="{height:app.navHeight-265+'px'}">
+        <div class="mobilebody">
             <table class="form-table table table-striped table-bordered table-hover">
                 <colgroup>
                     <col ng-repeat="one in widthfields" width="{{one.width}}px"/>

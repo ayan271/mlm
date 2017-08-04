@@ -16,11 +16,11 @@ app.controller('SigninCtrl', ['$scope', '$http', '$state', '$translatePartialLoa
         $scope.authError = null;
         // sso.signon($scope.user, function(err, result){
         //     console.log(result);
-            localStorage.setItem('account', $scope.user.account);
-            // if(result.token){
-            //     localStorage.setItem('token',result.token);
-            //     localStorage.setItem('id',result.id);
-                localStorage.setItem('visImgCode', false);
+        //     localStorage.setItem('account', $scope.user.account);
+        //     if(result.token){
+        //         localStorage.setItem('token',result.token);
+        //         localStorage.setItem('id',result.id);
+        //         localStorage.setItem('visImgCode', false);
                 $scope.visImgCode = false;
                 var url= JSON.parse(localStorage.getItem('url'));
                 var param = JSON.parse(localStorage.getItem('param'));
@@ -29,18 +29,18 @@ app.controller('SigninCtrl', ['$scope', '$http', '$state', '$translatePartialLoa
                 }else {
                     $state.go(url.name,param);
                 }
-        //     }else{
-        //         $scope.authError = '账号或密码错误';
-        //         if(result.err===2006||result.err===2007){
-        //             $state.go('access.signin');
-        //             localStorage.setItem('visImgCode', true);
-        //             $scope.visImgCode = true;
-        //         }
-        //         if($scope.visImgCode) $scope.refresh();
-        //         if(result.err===2007) $scope.authError = '验证码错误';
-        //         $scope.isWXLongin = false;
-        //         $scope.warning($scope.authError);
-        //     }
+            // }else{
+            //     $scope.authError = '账号或密码错误';
+            //     if(result.err===2006||result.err===2007){
+            //         $state.go('access.signin');
+            //         localStorage.setItem('visImgCode', true);
+            //         $scope.visImgCode = true;
+            //     }
+            //     if($scope.visImgCode) $scope.refresh();
+            //     if(result.err===2007) $scope.authError = '验证码错误';
+            //     $scope.isWXLongin = false;
+            //     $scope.warning($scope.authError);
+            // }
         // });
     };
 

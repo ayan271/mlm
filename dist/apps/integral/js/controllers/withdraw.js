@@ -1,5 +1,5 @@
 'use strict';
-app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$stateParams',function ($scope, $state, $http,global,$stateParams) {
+app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$stateParams','$timeout',function ($scope, $state, $http,global,$stateParams,$timeout) {
     var sso = jm.sdk.sso;
     $scope.enableTypeChoose = true;   //是否允许选择操作类型
     $scope.type = $stateParams.type || null;
@@ -12,19 +12,6 @@ app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$statePara
         $scope.playerjb = global.reg(player.jb);
     }
     sessionStorage.removeItem("selectedUser");
-
-
-    // var bank = jm.sdk.bank;
-    // $scope.querybank = function () {
-    //     bank.query({},function(err,result){
-    //         result || (result||{});
-    //         var holds = result.holds||{};
-    //         var jbObj = holds.jb || {};
-    //         $scope.balence = jbObj.amountValid||0;
-    //         $scope.jb = global.reg(jbObj.amountValid||0);
-    //     });
-    // }
-    // $scope.querybank();
 
     var page = 1;
     var pageSize = 10;
@@ -44,20 +31,24 @@ app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$statePara
 
     $scope.searchUser = function(_page,keyword){
         if(_page) page = 1;
-        if($scope.play.toUserId){
-            var url = statUri+'/players';
+        if($scope.search.keyword){
+            var url = meixia+'/users';
             $scope.moreLoading = true;
         }else{
             var url = "";
         }
-
-        $http.get(url, {
+        var search = $scope.search;
+        var date = search.date||{};
+        var keyword = search.keyword;
+        var startDate = date.startDate || "";
+        var endDate = date.endDate|| "";
+        $http.get(url,{
             params:{
                 token: sso.getToken(),
                 page: page,
                 rows: pageSize,
-                search:keyword,
-                isPlayer:true
+                tartDate:startDate.toString(),
+                endDate:endDate.toString()
             }
         }).success(function(result){
             $scope.moreLoading = false;
@@ -80,21 +71,25 @@ app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$statePara
         });
     };
     $scope.selectUser = function(row){
-        $scope.play.toUserId = row.uid;
-        $scope.nick = row.nick;
-        var userId = row._id;
-        bank.query({userId: userId},function(err, result){
-            result || (result||{});
-            var holds = result.holds||{};
-            var jbObj = holds.jb || {};
-            var jb = jbObj.amount || 0;
-            $scope.player = {
-                id: row._id,
-                uid: row.uid,
-                nick: row.nick,
-                jb: jb
-            }
-        });
+        console.info(row);
+        $scope.user = {
+            uid:row.uid,
+            nick:row.nick
+        }
+        $('#myModal2').modal('hide');
+        $scope.search.keyword = null;
+    };
+
+    $scope.open = false;
+    $scope.getdata = function(key) {
+        if($scope.open === false){
+            $scope.open = true;
+        }else{
+            $scope.open = false;
+            $scope.search.keyword = null;
+        }
+        $scope.searchUser(1,$scope.search.keyword);
+        console.info($scope.search.keyword);
     };
 
     $scope.updateData = function(type, allAmount){
@@ -138,11 +133,12 @@ app.controller('WithdrawCtrl', ['$scope', '$state', '$http','global','$statePara
                     cancelTitle:global.translateByKey('player.info.TipInfo.cancelTitle'),
                     okCallback: function($s){
 
-                        $http.post(agentUri+'/upcoin', {toUserId:toUserId,amount:amount,memo:memo},{
+                        $http.post(meixia+'/users',{
                             params: {
                                 token: sso.getToken()
                             }
                         }).success(function(result){
+                            console.info(result)
                             if(result.err){
                                 $timeout(function () {
                                     $scope.error(result.msg);

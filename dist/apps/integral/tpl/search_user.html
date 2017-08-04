@@ -1,39 +1,37 @@
-aaaaaa
-    <input type="text" class="form-control" placeholder="{{ 'common.searchUser' | translate }}" ng-model="play.toUserId" ng-required="true" ng-keyup="searchUser(1,play.toUserId)" id="searchinput" clientidmode="Static">
-    <div class="input-group-btn dropdown" drop-down-table>
-        <div type="button" class="btn btn-default" ng-bind="nick||'???'"></div><div type="button" class="btn btn-default" ng-click="searchUser(1,play.toUserId)">{{ 'common.search' | translate }} <span class="caret"></span></div>
-        <ul class="dropdown-menu pull-right">
-            <!--loading ng-if="moreLoading"-->
-            <li ng-if="moreLoading" style="position: absolute;z-index: 2;background: none;left: 0;right: 0;bottom: 0;top: 40%;margin:auto; list-style: none">
-                <div class="text-center"><img width="30px" src="./apps/common/img/loading.gif"></div>
-            </li>
+<div class="row">
+    <div class="">
+        <div class="input-group m-l-md m-r-md">
+            <input type="text" class=" form-control" placeholder="搜索账号/昵称" ng-model="search.keyword" ng-keyup="searchUser(1,search.keyword)">
+            <span class="input-group-btn">
+                <button class="btn btn-default" type="button" ng-click="getdata()">搜索<i class="caret"></i></button>
+            </span>
+        </div><!-- /input-group -->
 
-            <table st-table="rowCollectionBasic" class="w-xxl table table-bordered table-striped" style="margin: 0 0 5px 0">
+        <div class="m-l-md m-r-md" ng-if="open">
+            <table st-table="rowCollectionBasic" class=" table table-bordered table-striped" style="margin: 0 0 5px 0">
                 <thead>
-                <tr>
-                    <th>{{ 'common.userId' | translate }}</th>
-                    <th>{{ 'common.userAccount' | translate }}</th>
-                    <th>{{ 'common.userName' | translate }}</th>
-                </tr>
+                    <tr>
+                        <th>账号</th>
+                        <th>昵称</th>
+                        <th>积分</th>
+                    </tr>
                 </thead>
                 <tbody class="hand">
-                <tr ng-repeat="row in usersInfo.rows" ng-click="selectUser(row)" st-select-mode="single">
-                    <td>{{row.uid}}</td>
-                    <td>{{row.account||row.mobile}}</td>
-                    <td>{{row.nick.length<15?row.nick:(row.nick.substr(0, 8)+'...')}}</td>
-                </tr>
+                    <tr ng-repeat="row in usersInfo.rows" ng-click="selectUser(row)" st-select-mode="single">
+                        <td>{{row.uid}}</td>
+                        <td>{{row.nick.length<15?row.nick:(row.nick.substr(0, 8)+'...')}}</td>
+                        <td>{{row.account||row.mobile}}</td>
+                    </tr>
                 </tbody>
             </table>
-            <div style="text-align: center;">
+            <div class="text-center">
                 <i class="glyphicon glyphicon-chevron-left color hand" style="width: 20%" ng-click="left(play.toUserId)"></i>
                 <span>
-                    <label>{{usersInfo.page||0}}</label>/
-                    <label>{{usersInfo.pages||0}}</label>
+                    <label>{{page||0}}</label>/
+                    <label>{{pages||0}}</label>
                 </span>
                 <i class="glyphicon glyphicon-chevron-right color hand" style="width: 20%" ng-click="right(play.toUserId)"></i>
             </div>
-        </ul>
-    </div>
-
-
-
+        </div>
+    </div><!-- /.col-lg-6 -->
+</div><!-- /.row -->
